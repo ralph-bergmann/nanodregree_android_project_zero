@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ProjectZero</string>
+    <string name="toast_app_launch">This button will launch my %s app!</string>
+    <string name="my_nanodegree_apps">My Nanodegree Apps!</string>
+    <string-array name="apps">
+        <item>Popular Movies</item>
+        <item>Stock Hawk</item>
+        <item>Build it Bigger</item>
+        <item>Make Your App Material</item>
+        <item>Go Ubiquitous</item>
+        <item>Capstone</item>
+    </string-array>
+</resources>

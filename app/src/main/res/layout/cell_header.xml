@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="app"
+            type="udacty.nanadegree.projectzero.data.App"/>
+
+        <variable
+            name="clickHandler"
+            type="udacty.nanadegree.projectzero.adapter.AppsAdapter.ClickHandler"/>
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        android:padding="16dp"
+        android:text="@string/my_nanodegree_apps"
+        android:textAppearance="@style/AppTheme.TextAppearance.Saffron.Bold.16sp"/>
+
+</layout>

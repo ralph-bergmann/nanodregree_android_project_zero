@@ -1,0 +1,29 @@
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+/bin
+/gen
+/build
+/*/build/
+/captures
+
+# Intellij project files
+.gradle
+*.iws
+*.iml
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/.idea/gradle.xml
+
+#add editor inspections
+!.idea/inspectionProfiles
+
+/keystore
+
+# osx
+.DS_Store

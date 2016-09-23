@@ -1,0 +1,58 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+ext {
+
+    if (file('./keystore/signing.gradle').exists()) {
+        apply from: './keystore/signing.gradle'
+    }
+
+    def version = 'git rev-list HEAD --first-parent --count'.execute([], project.rootDir).text.trim().toInteger()
+
+    configuration = [
+        package          : "udacty.nanadegree.projectzero",
+        buildToolsVersion: "24.0.2",
+        minSdk           : 18,
+        targetSdk        : 24,
+        compileVersion   : 24,
+        version_code     : version,
+        version_name     : "1.0.0",
+        gitSha           : "git rev-parse --short HEAD".execute([], project.rootDir).text.trim(),
+        buildTime        : new Date().format("yyyy-MM-dd' 'HH:mm:ss' 'z"),
+        hasKeyfile       : file('./keystore/signing.gradle').exists(),
+    ]
+
+    libraries = [
+        anko                : "0.9",
+        databinding_compiler: "2.2.0",
+        espresso            : "2.2.2",
+        kotlin              : "1.0.4",
+        support             : "24.2.1",
+        support_test        : "0.5",
+    ]
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:deprecation" << "-Xlint:unchecked"
+    }
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
